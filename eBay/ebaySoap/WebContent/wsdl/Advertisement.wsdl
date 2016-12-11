@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://ebay.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://ebay.com" xmlns:intf="http://ebay.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://ebay.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="addAdvertise">
+    <complexType>
+     <sequence>
+      <element name="data" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="addAdvertiseResponse">
+    <complexType>
+     <sequence>
+      <element name="addAdvertiseReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getAdvertisements">
+    <complexType>
+     <sequence>
+      <element name="userId" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getAdvertisementsResponse">
+    <complexType>
+     <sequence>
+      <element name="getAdvertisementsReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="getAdvertisementsResponse">
+
+      <wsdl:part element="impl:getAdvertisementsResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="addAdvertiseResponse">
+
+      <wsdl:part element="impl:addAdvertiseResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getAdvertisementsRequest">
+
+      <wsdl:part element="impl:getAdvertisements" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="addAdvertiseRequest">
+
+      <wsdl:part element="impl:addAdvertise" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="Advertisement">
+
+      <wsdl:operation name="addAdvertise">
+
+         <wsdl:input message="impl:addAdvertiseRequest" name="addAdvertiseRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:addAdvertiseResponse" name="addAdvertiseResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getAdvertisements">
+
+         <wsdl:input message="impl:getAdvertisementsRequest" name="getAdvertisementsRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getAdvertisementsResponse" name="getAdvertisementsResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="AdvertisementSoapBinding" type="impl:Advertisement">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="addAdvertise">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="addAdvertiseRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="addAdvertiseResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getAdvertisements">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getAdvertisementsRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getAdvertisementsResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="AdvertisementService">
+
+      <wsdl:port binding="impl:AdvertisementSoapBinding" name="Advertisement">
+
+         <wsdlsoap:address location="http://localhost:8080/ebayLab3/services/Advertisement"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

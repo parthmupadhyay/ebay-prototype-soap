@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://ebay.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://ebay.com" xmlns:intf="http://ebay.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://ebay.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="loadProducts">
+    <complexType>
+     <sequence>
+      <element name="userid" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="loadProductsResponse">
+    <complexType>
+     <sequence>
+      <element name="loadProductsReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="loadProductDetails">
+    <complexType>
+     <sequence>
+      <element name="productId" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="loadProductDetailsResponse">
+    <complexType>
+     <sequence>
+      <element name="loadProductDetailsReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="loadProductsResponse">
+
+      <wsdl:part element="impl:loadProductsResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="loadProductsRequest">
+
+      <wsdl:part element="impl:loadProducts" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="loadProductDetailsResponse">
+
+      <wsdl:part element="impl:loadProductDetailsResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="loadProductDetailsRequest">
+
+      <wsdl:part element="impl:loadProductDetails" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="Product">
+
+      <wsdl:operation name="loadProducts">
+
+         <wsdl:input message="impl:loadProductsRequest" name="loadProductsRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:loadProductsResponse" name="loadProductsResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="loadProductDetails">
+
+         <wsdl:input message="impl:loadProductDetailsRequest" name="loadProductDetailsRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:loadProductDetailsResponse" name="loadProductDetailsResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="ProductSoapBinding" type="impl:Product">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="loadProducts">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="loadProductsRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="loadProductsResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="loadProductDetails">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="loadProductDetailsRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="loadProductDetailsResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="ProductService">
+
+      <wsdl:port binding="impl:ProductSoapBinding" name="Product">
+
+         <wsdlsoap:address location="http://localhost:8080/ebayLab3/services/Product"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

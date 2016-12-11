@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://ebay.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://ebay.com" xmlns:intf="http://ebay.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://ebay.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="addOrderDetails">
+    <complexType>
+     <sequence>
+      <element name="data" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="addOrderDetailsResponse">
+    <complexType>
+     <sequence>
+      <element name="addOrderDetailsReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="addOrderEntry">
+    <complexType>
+     <sequence>
+      <element name="userId" type="xsd:int"/>
+      <element name="total" type="xsd:int"/>
+      <element name="date" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="addOrderEntryResponse">
+    <complexType>
+     <sequence>
+      <element name="addOrderEntryReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="updateSellers">
+    <complexType>
+     <sequence>
+      <element name="quantity" type="xsd:int"/>
+      <element name="productId" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="updateSellersResponse">
+    <complexType>
+     <sequence>
+      <element name="updateSellersReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="loadOrders">
+    <complexType>
+     <sequence>
+      <element name="userId" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="loadOrdersResponse">
+    <complexType>
+     <sequence>
+      <element name="loadOrdersReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="loadOrderDetails">
+    <complexType>
+     <sequence>
+      <element name="orderId" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="loadOrderDetailsResponse">
+    <complexType>
+     <sequence>
+      <element name="loadOrderDetailsReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="addOrderEntryResponse">
+
+      <wsdl:part element="impl:addOrderEntryResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="loadOrderDetailsRequest">
+
+      <wsdl:part element="impl:loadOrderDetails" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="updateSellersRequest">
+
+      <wsdl:part element="impl:updateSellers" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="addOrderDetailsResponse">
+
+      <wsdl:part element="impl:addOrderDetailsResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="updateSellersResponse">
+
+      <wsdl:part element="impl:updateSellersResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="loadOrdersResponse">
+
+      <wsdl:part element="impl:loadOrdersResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="loadOrdersRequest">
+
+      <wsdl:part element="impl:loadOrders" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="addOrderDetailsRequest">
+
+      <wsdl:part element="impl:addOrderDetails" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="addOrderEntryRequest">
+
+      <wsdl:part element="impl:addOrderEntry" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="loadOrderDetailsResponse">
+
+      <wsdl:part element="impl:loadOrderDetailsResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="Order">
+
+      <wsdl:operation name="addOrderDetails">
+
+         <wsdl:input message="impl:addOrderDetailsRequest" name="addOrderDetailsRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:addOrderDetailsResponse" name="addOrderDetailsResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="addOrderEntry">
+
+         <wsdl:input message="impl:addOrderEntryRequest" name="addOrderEntryRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:addOrderEntryResponse" name="addOrderEntryResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="updateSellers">
+
+         <wsdl:input message="impl:updateSellersRequest" name="updateSellersRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:updateSellersResponse" name="updateSellersResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="loadOrders">
+
+         <wsdl:input message="impl:loadOrdersRequest" name="loadOrdersRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:loadOrdersResponse" name="loadOrdersResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="loadOrderDetails">
+
+         <wsdl:input message="impl:loadOrderDetailsRequest" name="loadOrderDetailsRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:loadOrderDetailsResponse" name="loadOrderDetailsResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="OrderSoapBinding" type="impl:Order">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="addOrderDetails">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="addOrderDetailsRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="addOrderDetailsResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="addOrderEntry">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="addOrderEntryRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="addOrderEntryResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="updateSellers">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="updateSellersRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="updateSellersResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="loadOrders">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="loadOrdersRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="loadOrdersResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="loadOrderDetails">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="loadOrderDetailsRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="loadOrderDetailsResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="OrderService">
+
+      <wsdl:port binding="impl:OrderSoapBinding" name="Order">
+
+         <wsdlsoap:address location="http://localhost:8080/ebayLab3/services/Order"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

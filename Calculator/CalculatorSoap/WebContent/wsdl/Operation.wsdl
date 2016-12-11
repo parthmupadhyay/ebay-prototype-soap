@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://com" xmlns:intf="http://com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="add">
+    <complexType>
+     <sequence>
+      <element name="value1" type="xsd:float"/>
+      <element name="value2" type="xsd:float"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="addResponse">
+    <complexType>
+     <sequence>
+      <element name="addReturn" type="xsd:float"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="mul">
+    <complexType>
+     <sequence>
+      <element name="value1" type="xsd:float"/>
+      <element name="value2" type="xsd:float"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="mulResponse">
+    <complexType>
+     <sequence>
+      <element name="mulReturn" type="xsd:float"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="sub">
+    <complexType>
+     <sequence>
+      <element name="value1" type="xsd:float"/>
+      <element name="value2" type="xsd:float"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="subResponse">
+    <complexType>
+     <sequence>
+      <element name="subReturn" type="xsd:float"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="div">
+    <complexType>
+     <sequence>
+      <element name="value1" type="xsd:float"/>
+      <element name="value2" type="xsd:float"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="divResponse">
+    <complexType>
+     <sequence>
+      <element name="divReturn" type="xsd:float"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="divRequest">
+
+      <wsdl:part element="impl:div" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="mulRequest">
+
+      <wsdl:part element="impl:mul" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="addResponse">
+
+      <wsdl:part element="impl:addResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="mulResponse">
+
+      <wsdl:part element="impl:mulResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="divResponse">
+
+      <wsdl:part element="impl:divResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="addRequest">
+
+      <wsdl:part element="impl:add" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="subResponse">
+
+      <wsdl:part element="impl:subResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="subRequest">
+
+      <wsdl:part element="impl:sub" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="Operation">
+
+      <wsdl:operation name="add">
+
+         <wsdl:input message="impl:addRequest" name="addRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:addResponse" name="addResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="mul">
+
+         <wsdl:input message="impl:mulRequest" name="mulRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:mulResponse" name="mulResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="sub">
+
+         <wsdl:input message="impl:subRequest" name="subRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:subResponse" name="subResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="div">
+
+         <wsdl:input message="impl:divRequest" name="divRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:divResponse" name="divResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="OperationSoapBinding" type="impl:Operation">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="add">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="addRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="addResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="mul">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="mulRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="mulResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="sub">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="subRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="subResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="div">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="divRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="divResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="OperationService">
+
+      <wsdl:port binding="impl:OperationSoapBinding" name="Operation">
+
+         <wsdlsoap:address location="http://localhost:8080/Calculator/services/Operation"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

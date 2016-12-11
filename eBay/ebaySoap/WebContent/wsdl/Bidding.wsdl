@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://ebay.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://ebay.com" xmlns:intf="http://ebay.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://ebay.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="closeBid">
+    <complexType>
+     <sequence>
+      <element name="bidId" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="closeBidResponse">
+    <complexType>
+     <sequence>
+      <element name="closeBidReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="addOrder">
+    <complexType>
+     <sequence>
+      <element name="userId" type="xsd:int"/>
+      <element name="total" type="xsd:int"/>
+      <element name="orderDate" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="addOrderResponse">
+    <complexType>
+     <sequence>
+      <element name="addOrderReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="updateQuantity">
+    <complexType>
+     <sequence>
+      <element name="productId" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="updateQuantityResponse">
+    <complexType>
+     <sequence>
+      <element name="updateQuantityReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getBidDetail">
+    <complexType>
+     <sequence>
+      <element name="bidId" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getBidDetailResponse">
+    <complexType>
+     <sequence>
+      <element name="getBidDetailReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getRunningBidProducts">
+    <complexType/>
+   </element>
+   <element name="getRunningBidProductsResponse">
+    <complexType>
+     <sequence>
+      <element name="getRunningBidProductsReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="insertBidProduct">
+    <complexType>
+     <sequence>
+      <element name="data" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="insertBidProductResponse">
+    <complexType>
+     <sequence>
+      <element name="insertBidProductReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="getBidDetailResponse">
+
+      <wsdl:part element="impl:getBidDetailResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="closeBidResponse">
+
+      <wsdl:part element="impl:closeBidResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="insertBidProductResponse">
+
+      <wsdl:part element="impl:insertBidProductResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="addOrderResponse">
+
+      <wsdl:part element="impl:addOrderResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="insertBidProductRequest">
+
+      <wsdl:part element="impl:insertBidProduct" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="closeBidRequest">
+
+      <wsdl:part element="impl:closeBid" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="addOrderRequest">
+
+      <wsdl:part element="impl:addOrder" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="updateQuantityRequest">
+
+      <wsdl:part element="impl:updateQuantity" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getBidDetailRequest">
+
+      <wsdl:part element="impl:getBidDetail" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getRunningBidProductsRequest">
+
+      <wsdl:part element="impl:getRunningBidProducts" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="updateQuantityResponse">
+
+      <wsdl:part element="impl:updateQuantityResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getRunningBidProductsResponse">
+
+      <wsdl:part element="impl:getRunningBidProductsResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="Bidding">
+
+      <wsdl:operation name="closeBid">
+
+         <wsdl:input message="impl:closeBidRequest" name="closeBidRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:closeBidResponse" name="closeBidResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="addOrder">
+
+         <wsdl:input message="impl:addOrderRequest" name="addOrderRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:addOrderResponse" name="addOrderResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="updateQuantity">
+
+         <wsdl:input message="impl:updateQuantityRequest" name="updateQuantityRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:updateQuantityResponse" name="updateQuantityResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getBidDetail">
+
+         <wsdl:input message="impl:getBidDetailRequest" name="getBidDetailRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getBidDetailResponse" name="getBidDetailResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getRunningBidProducts">
+
+         <wsdl:input message="impl:getRunningBidProductsRequest" name="getRunningBidProductsRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getRunningBidProductsResponse" name="getRunningBidProductsResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="insertBidProduct">
+
+         <wsdl:input message="impl:insertBidProductRequest" name="insertBidProductRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:insertBidProductResponse" name="insertBidProductResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="BiddingSoapBinding" type="impl:Bidding">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="closeBid">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="closeBidRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="closeBidResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="addOrder">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="addOrderRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="addOrderResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="updateQuantity">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="updateQuantityRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="updateQuantityResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getBidDetail">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getBidDetailRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getBidDetailResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getRunningBidProducts">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getRunningBidProductsRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getRunningBidProductsResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="insertBidProduct">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="insertBidProductRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="insertBidProductResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="BiddingService">
+
+      <wsdl:port binding="impl:BiddingSoapBinding" name="Bidding">
+
+         <wsdlsoap:address location="http://localhost:8080/ebayLab3/services/Bidding"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
